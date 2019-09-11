@@ -1,0 +1,49 @@
+<br><br>
+<div class="uk-flex-center" uk-grid>
+  <div class="uk-width-1-2@m">
+    <div class="uk-card uk-card-default uk-card-body">
+      <h3 class="uk-card title">Editar Produto</h3>
+      <form [formGroup]="form">
+        <div class="uk-margin">
+          <input type="number" class="uk-input uk-form-large" placeholder="ID" (blur)="getProduct($event.target.value)"
+            formControlName="id"
+            [ngClass]="{'uk-form-danger': (form.controls.id.invalid && !form.controls.id.pristine)}">
+          <span class="uk-text-danger" *ngIf="form.controls.id.invalid && !form.controls.id.pristine">
+            O campo ID é obrigatório
+          </span>
+        </div>
+        <div class="uk-margin">
+          <input type="text" class="uk-input uk-form-large" placeholder="Descrição" formControlName="description"
+            [ngClass]="{'uk-form-danger': (form.controls.description.invalid && !form.controls.description.pristine)}">
+          <span class="uk-text-danger" *ngIf="form.controls.description.invalid && !form.controls.description.pristine">
+            O campo descrição é obrigatório
+          </span>
+        </div>
+        <div class="uk-margin">
+          <input type="text" class="uk-input uk-form-large" placeholder="Unidade" formControlName="unity"
+            [ngClass]="{'uk-form-danger': (form.controls.unity.invalid && !form.controls.unity.pristine)}">
+          <span class="uk-text-danger" *ngIf="form.controls.unity.invalid && !form.controls.unity.pristine">
+            O campo unidade é obrigatório
+          </span>
+        </div>
+        <div class="uk-margin">
+          <input type="number" class="uk-input uk-form-large" placeholder="Preço" formControlName="price"
+            [ngClass]="{'uk-form-danger': (form.controls.price.invalid && !form.controls.price.pristine)}">
+          <span class="uk-text-danger" *ngIf="form.controls.price.invalid && !form.controls.price.pristine">
+            O campo preço é obrigatório
+          </span>
+        </div>
+      </form>
+      <div class="uk-margin uk-text-right">
+        <button class="uk-button uk-button-default" [disabled]="form.invalid" (click)="clear()">
+          Limpar
+        </button>
+        <button class="uk-button uk-button-primary" [disabled]="form.invalid" (click)="submit()">
+          Salvar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,25 @@
+<app-loading [data]="products"></app-loading>
+
+<div class="uk-flex-center" uk-grid *ngIf="products?.length > 0">
+  <table class="uk-table uk-table-divider uk-table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Descrição</th>
+        <th>Unidade</th>
+        <th>Preço</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.unity }}</td>
+        <td>{{ product.price | currency:'BRL' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,28 @@
+<nav class="uk-navbar-container" uk-navbar>
+  <div class="uk-navbar-left">
+    <ul class="uk-navbar-nav">
+      <li class="uk-active">
+        <a href="" uk-toggle="target: #my-id">
+          MENU
+        </a>
+      </li>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/create" routerLinkActive="active-link">Cadastrar</a></li>
+      <li><a routerLink="/edit" routerLinkActive="active-link">Editar</a></li>
+      <li><a routerLink="/delete" routerLinkActive="active-link">Excluir</a></li>
+      <li><a href="" (click)="logout()">LOGOUT</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- This is the off-canvas -->
+<div id="my-id" uk-offcanvas>
+  <div class="uk-offcanvas-bar">
+
+    <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+  </div>
+</div>
+<div class="uk-padding">
+  <router-outlet></router-outlet>
+</div>
